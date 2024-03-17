@@ -35,3 +35,34 @@ I  N  V  A  D  E  A  T  F  I  V  E
 ```
 
 5. See `cipher` directory for TODO.
+
+# Part 2: Public Key Cryptosystem
+
+1. Verify that gcd(13, 42\*58) = 1. Show your work.
+
+> 42 can be factored into 2(3)(7) and 58 can be factored into 2(29). Since 13 is prime and neither 42 nor 58 have 13 as a factor, the greatest common factor is 1. Therefore, gcd(13, 42\*58) = 1.
+
+2. Find an integer d so that 13\*d = 1 (mod 42\*58). Show your work or cite the online source you used to find d.
+
+> Done with significant help from Dr. Pam Cutter, who explained the extended euclidean algorithm to us.
+> 42(58) = 2436
+> 13d =_ 1 mod 2436
+> 13d =_ 1 + 2436n mod 2436
+> 1 + 2436 =_ 0 mod 13
+> 2436 = 13(187) + 5
+> 13 = 5(2) + 3
+> 5 = 3(1) + 2
+> 3 = 2(1) + 1
+> 2 = 1(2) + 0
+> 1 = 3 - 2(1)
+> 1 = 3 - (5 - (3(1)))
+> 1 = (13 - (5(2))) - (5 - (13 - 5(2)))
+> 1 = 2(13 - 5(2)) + 5
+> 1 = 2(13) - 5(5)
+> 1 = 2(13) - 5(2436 - 13(187))
+> 1 = (5(187) + 2)(13) - 5(2436)
+> 1 = 937(13) - 5(2436)
+> 1 + 5(2436) = 937(13)
+> n = 5, d = 937
+>
+> When d = 937, 13d =_ 1 mod 2436.
