@@ -126,7 +126,7 @@ def main() -> int:
             print("Invalid message. Please enter only letters.")
             return 1
         encrypted = " ".join(str(num) for num in encrypt(msg, key, mod))
-        print(f"The encrypted message is: {encrypted}")
+        print(f"\nThe encrypted message is: {encrypted}")
     # Handle decryption
     else:
         cipher = input("Please enter the message as numbers separated by spaces:\n")
@@ -136,7 +136,7 @@ def main() -> int:
             print("Invalid message. Please enter integer values.")
             return 1
         decrypted = decrypt(cipher, key, mod)
-        print(f"The decrypted message is: {decrypted}")
+        print(f"\nThe decrypted message is: {decrypted}")
 
     return 0
 
