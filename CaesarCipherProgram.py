@@ -167,4 +167,5 @@ def main():
     elif(option == "D"):
         print("\nYour decrypted message is " + decrypt(message))
 
-main()
+if __name__ == "__main__":
+    main()
