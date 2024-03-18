@@ -46,7 +46,7 @@ U  Z  H  M  P  Q  M  F  R  U  H  Q
 I  N  V  A  D  E  A  T  F  I  V  E
 ```
 
-5. See `cipher` directory for TODO.
+5. See `CaesarCipherProgram.py`
 
 ## Part 2: Public Key Cryptosystem
 
@@ -56,7 +56,7 @@ I  N  V  A  D  E  A  T  F  I  V  E
 
 2. Find an integer d so that 13\*d = 1 (mod 42\*58). Show your work or cite the online source you used to find d.
 
-> Done with significant help from Dr. Pam Cutter, who explained the extended euclidean algorithm to us.  
+> Done with significant help from Dr. Pam Cutter, who explained the extended Euclidean algorithm to us.  
 > 42(58) = 2436  
 > 13d =\_ 1 mod 2436  
 > 13d =\_ 1 + 2436n mod 2436  
@@ -78,7 +78,7 @@ I  N  V  A  D  E  A  T  F  I  V  E
 > n = 5, d = 937  
 > When d = 937, 13d =\_ 1 mod 2436.  
 
-3. Encipher the message ATTACK using the RSA cipher with public key n = 43*59 and e = 13. Show your work.
+3. Encipher the message ATTACK using the RSA cipher with public key n = 43\*59 and e = 13. Show your work.
 
 > p = 43  
 > q = 59  
