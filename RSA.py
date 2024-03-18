@@ -31,11 +31,13 @@ def rep_square(base: int, exp: int, mod: int) -> int:
     result = 1
     square = base
     mask = 1
+
+    # Keep squaring while there are still bits in the exponent
     while mask <= exp:
-        if exp & mask:
-            result = (result * square) % mod
-        square = (square * square) % mod
-        mask <<= 1
+        if exp & mask:                         # If the current bit is 1
+            result = (result * square) % mod   # Multiply the result and the mod it
+        square = (square * square) % mod       # Square the square and mod it
+        mask <<= 1                             # Move to the next bit (to the left)
 
     return result
 
