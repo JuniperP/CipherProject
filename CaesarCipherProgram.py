@@ -1,9 +1,9 @@
 
 #Clara Siefke and Juniper Pasternak | 03/16/24 | Caesar Cipher Program
 
-# alphToNum
+# alphaToNum
 # This function takes a string as its parameter and returns an array of the numerical values (still as strings) corresponding to each to each letter.
-def alphToNum(a):
+def alphaToNum(a):
     a = a.upper()
 
     array = []
@@ -70,9 +70,9 @@ def alphToNum(a):
     
     return array
 
-# numToAlph
+# numToAlpha
 # This functions takes an array of numbers (as integers) and returns a string of letters with each letter corresponding to a number in the array.
-def numToAlph(n):
+def numToAlpha(n):
     for i in range(len(n)):
         if(n[i] == 0):
             n[i] = "A"
@@ -135,26 +135,26 @@ def numToAlph(n):
     return txt
 
 # encrypt
-# This function takes a string, calls the alphToNum function to convert it into an array of numbers (as integers), adds the length of the array to each value in the array and makes them mod 26, and then calls the numToAlph function to covert the array into a string of letters. It returns this string of letters.
+# This function takes a string, calls the alphaToNum function to convert it into an array of numbers (as integers), adds the length of the array to each value in the array and makes them mod 26, and then calls the numToAlpha function to covert the array into a string of letters. It returns this string of letters.
 def encrypt(m):
 
-    array = alphToNum(m)
+    array = alphaToNum(m)
 
     for i in range(len(array)):
         array[i] = (array[i] + len(array)) % 26
 
-    return numToAlph(array)
+    return numToAlpha(array)
 
 # decrypt
-# This function takes a string, calls the alphToNum function to convert it into an array of numbers (as integers), subtracts the length of the array from each value in the array and makes them mod 26, and then calls the numToAlph function to covert the array into a string of letters. It returns this string of letters.
+# This function takes a string, calls the alphaToNum function to convert it into an array of numbers (as integers), subtracts the length of the array from each value in the array and makes them mod 26, and then calls the numToAlpha function to covert the array into a string of letters. It returns this string of letters.
 def decrypt(m):
 
-    array = alphToNum(m)
+    array = alphaToNum(m)
 
     for i in range(len(array)):
         array[i] = (array[i] - len(array)) % 26
 
-    return numToAlph(array)
+    return numToAlpha(array)
 
 # main
 def main():
