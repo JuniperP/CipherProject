@@ -1,7 +1,7 @@
+# Caesar Cipher Program
+# Authors: Clara Siefke and Juniper Pasternak
+# Date: 03/16/24 to 3/17/2024
 
-#Clara Siefke and Juniper Pasternak | 03/16/24 | Caesar Cipher Program
-
-# alphaToNum
 # This function takes a string as its parameter and returns an array of the numerical values (still as strings) corresponding to each to each letter.
 def alphaToNum(a):
     a = a.upper()
