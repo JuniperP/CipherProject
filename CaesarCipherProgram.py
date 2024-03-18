@@ -25,14 +25,14 @@ def alpha_to_num(alphaStr: str) -> list[int]:
     # of 'A' to get the numerical value of the letter.
     return [ord(char) - ord('A') for char in alphaStr]
 
-def num_to_alpha(numList: list[str]):
+def num_to_alpha(numList: list[str]) -> str:
     """Converts a list of numbers to a string of capital letters.
 
     Args:
         numList (list[str]): a list of integers in range [0, 25] to be converted
 
     Returns:
-        _type_: a string of capital letters representing each number in the list
+        str: a string of capital letters representing each number in the list
     """
 
     # We can take the numerical value of each letter and add the Unicode value
@@ -45,11 +45,11 @@ def shift_msg(msg: str, shift: int) -> str:
        will be "DEF".
 
     Args:
-        msg (str): _description_
-        shift (int): _description_
+        msg (str): a string of capital letters to be shifted
+        shift (int): the amount to shift each letter by
 
     Returns:
-        str: _description_
+        str: the new message after shifting each letter by the shift value
     """
 
     return "".join(num_to_alpha(
@@ -60,7 +60,7 @@ def main() -> int:
     """Runs the main program.
 
     Returns:
-        int: The exit code. 0 for success, 1 for failure.
+        int: 0 if the program runs successfully, 1 if there is an error
     """
 
     # Get the message and make sure it only contains letters
