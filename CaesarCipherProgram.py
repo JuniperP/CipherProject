@@ -10,7 +10,7 @@ Date: 03/16/24 to 3/17/2024
 
 import sys
 
-def alphaToNum(alphaStr: str) -> list[int]:
+def alpha_to_num(alphaStr: str) -> list[int]:
     """Converts a string of capital letters to a list of numbers representing their
        position in the alphabet from 0 to 25.
 
@@ -25,7 +25,7 @@ def alphaToNum(alphaStr: str) -> list[int]:
     # of 'A' to get the numerical value of the letter.
     return [ord(char) - ord('A') for char in alphaStr]
 
-def numToAlpha(numList: list[str]):
+def num_to_alpha(numList: list[str]):
     """Converts a list of numbers to a string of capital letters.
 
     Args:
@@ -39,7 +39,7 @@ def numToAlpha(numList: list[str]):
     # of 'A' to get the Unicode value of the letter.
     return "".join([chr(num + ord('A')) for num in numList])
 
-def shiftMsg(msg: str, shift: int) -> str:
+def shift_msg(msg: str, shift: int) -> str:
     """Shifts each letter in the message by the shift value and returns the new message.
        For example, if the message is "ABC" and the shift value is 3, the new message
        will be "DEF".
@@ -52,8 +52,8 @@ def shiftMsg(msg: str, shift: int) -> str:
         str: _description_
     """
 
-    return "".join(numToAlpha(
-        [(num + shift) % 26 for num in alphaToNum(msg)])
+    return "".join(num_to_alpha(
+        [(num + shift) % 26 for num in alpha_to_num(msg)])
     )
 
 def main() -> int:
@@ -88,7 +88,7 @@ def main() -> int:
     if option == "D":
         shift *= -1
 
-    print("\nYour decrypted message is " + shiftMsg(message, shift))
+    print("\nYour decrypted message is " + shift_msg(message, shift))
 
     return 0
 
