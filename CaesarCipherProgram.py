@@ -63,16 +63,8 @@ def main() -> int:
         int: 0 if the program runs successfully, 1 if there is an error
     """
 
-    # Get the message and make sure it only contains letters
-    message: str = input(
-        "Enter a message with (alphabetical) to encrypt/decrypt:\n"
-    ).strip().replace(" ", "").upper()
-    if not message.isalpha():
-        print("Invalid message. Please enter only letters.")
-        return 1
-
     # Get the option and make sure it is valid
-    option: str = input("[E] to encrypt | [D] to decrypt:\n").strip().upper()
+    option = input("[E] to encrypt | [D] to decrypt:\n").strip().upper()
     if option not in ["E", "D"]:
         print("Invalid option. Please enter 'E' or 'D'.")
         return 1
@@ -82,6 +74,14 @@ def main() -> int:
         shift = int(input("Enter your secret key (shift value):\n").strip())
     except ValueError:
         print("Invalid key. Please enter an integer.")
+        return 1
+
+    # Get the message and make sure it only contains letters
+    message = input(
+        "Enter a message (alphabetical) to encrypt/decrypt:\n"
+    ).strip().replace(" ", "").upper()
+    if not message.isalpha():
+        print("Invalid message. Please enter only letters.")
         return 1
 
     # If the user wants to decrypt the message, negate the shift value
