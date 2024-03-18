@@ -4,7 +4,7 @@ Juniper Pasternak and Clara Siefke
 
 ## Notes
 
-Let =_ denote modular equivalence (or congruency)
+Let =\_ denote modular equivalence (or congruency)
 
 ## Part 1: Private Key Cryptography
 
