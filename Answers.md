@@ -114,7 +114,7 @@ I  N  V  A  D  E  A  T  F  I  V  E
 4. Decipher the message 2116 140 0 581 140 that was encrypted using this cipher. Show your work.
 
 > Let m(c) denote the function c^d (mod n), where c is the encrypted message,
-> d is the private key, and n is one of public keys.  
+> d is the private key, and n is the public modulo.  
 > m(c) represents the function decoding the encrypted message, c.  
 >
 > 2116 = 2116 mod 2537  
