@@ -1,3 +1,2 @@
 [MESSAGES CONTROL]
-disable=C0103 # disable naming style
-disable=E1136 # issue when checking with 3.8 list[object] fails
+disable=C0103,E1136 # disable naming style and issue with unsubscriptable objects
