@@ -4,7 +4,7 @@ Juniper Pasternak and Clara Siefke
 
 ## Notes
 
-Let \~= denote modular equivalence (or congruency)
+Let \~= denote modular equivalence (or congruency).
 
 ## Part 1: Private Key Cryptography
 
@@ -113,6 +113,10 @@ I  N  V  A  D  E  A  T  F  I  V  E
 
 4. Decipher the message 2116 140 0 581 140 that was encrypted using this cipher. Show your work.
 
+> Let m(c) denote the function c^d (mod n), where c is the encrypted message,
+> d is the private key, and n is one of public keys.  
+> m(c) represents the function decoding the encrypted message, c.  
+>
 > 2116 = 2116 mod 2537  
 > 2116^2 = 4477456 \~= 2188 mod 2537  
 > 2116^4 = (2116^2)^2 \~= 2188^2 = 4787344 \~= 25 mod 2537  
@@ -134,7 +138,7 @@ I  N  V  A  D  E  A  T  F  I  V  E
 > 140^64 = (140^32)^2 \~= 795^2 = 632025 \~= 312 mod 2537  
 > 140^128 = (140^64)^2 \~= 312^2 = 97344 \~= 938 mod 2537  
 > 140^256 = (140^128)^2 \~= 938^2 = 879844 \~= 2042 mod 2537  
-> 140^512 = (140^256)^2 = \_ 2042^2 = 4169764 \~= 1473 mod 2537  
+> 140^512 = (140^256)^2 \~= 2042^2 = 4169764 \~= 1473 mod 2537  
 > 140^937 = 140^(512+256+128+32+8+1) = 140^512 \* 140^256 \* 140^128 \* 140^32 \* 140^8 \* 140^1 \~= 1473(2042)(938)(795)(2505)(140) \~= 4 mod 2537  
 > m(140) \~= 140^937 mod 2537 =_ 4 mod 2537  
 > m(0) \~= 0^937 mod 2537 \~= 0 mod 2537  
