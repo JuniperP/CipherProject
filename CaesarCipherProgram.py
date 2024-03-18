@@ -88,7 +88,8 @@ def main() -> int:
     if option == "D":
         shift *= -1
 
-    print("\nYour decrypted message is " + shift_msg(message, shift))
+    crypto_type = "encrypted" if option == "E" else "decrypted"
+    print(f"\nYour {crypto_type} message is: " + shift_msg(message, shift))
 
     return 0
 

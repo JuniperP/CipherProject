@@ -77,7 +77,7 @@ Enter your secret key (shift value):
 Enter a message (alphabetical) to encrypt/decrypt:
 HelloWorld
 
-Your decrypted message is BYFFIQILFX
+Your encrypted message is: BYFFIQILFX
 ```
 
 ```text
@@ -89,7 +89,7 @@ Enter your secret key (shift value):
 Enter a message (alphabetical) to encrypt/decrypt:
 BYFFIQILFX
 
-Your decrypted message is HELLOWORLD
+Your decrypted message is: HELLOWORLD
 ```
 
 #### RSA
@@ -111,7 +111,7 @@ The encrypted message is: 156 205 2497 2497 2116 2475 2116 2222 2497 140
 ```text
 >python RSA.py
 [E] to encrypt | [D] to decrypt:
-d
+D
 Please enter the private key for encryption (if empty, .env will be used):
 
 Please enter the modulus (if empty, .env will be used):
