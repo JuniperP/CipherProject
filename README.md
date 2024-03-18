@@ -63,3 +63,61 @@ UNIX-like:
 python3 CaesarCipherProgram.py
 python3 RSA.py
 ```
+
+### Examples
+
+#### Caesar Cipher
+
+```text
+>python CaesarCipherProgram.py
+[E] to encrypt | [D] to decrypt:
+E
+Enter your secret key (shift value):
+20
+Enter a message (alphabetical) to encrypt/decrypt:
+HelloWorld
+
+Your decrypted message is BYFFIQILFX
+```
+
+```text
+>python CaesarCipherProgram.py
+[E] to encrypt | [D] to decrypt:
+D
+Enter your secret key (shift value):
+20
+Enter a message (alphabetical) to encrypt/decrypt:
+BYFFIQILFX
+
+Your decrypted message is HELLOWORLD
+```
+
+#### RSA
+
+```text
+>python RSA.py
+[E] to encrypt | [D] to decrypt:
+E
+Please enter the public key for encryption (if empty, .env will be used):
+
+Please enter the modulus (if empty, .env will be used):
+
+Please enter the message to be encrypted:
+HelloWorld
+
+The encrypted message is: 156 205 2497 2497 2116 2475 2116 2222 2497 140
+```
+
+```text
+>python RSA.py
+[E] to encrypt | [D] to decrypt:
+d
+Please enter the private key for encryption (if empty, .env will be used):
+
+Please enter the modulus (if empty, .env will be used):
+
+Please enter the message as numbers separated by spaces:
+156 205 2497 2497 2116 2475 2116 2222 2497 140
+
+The decrypted message is: HELLOWORLD
+```
