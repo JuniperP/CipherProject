@@ -5,7 +5,9 @@ and a private key and decrypts the message using the RSA decryption algorithm.
 The user is prompted to enter a message, choose whether to encrypt or decrypt
 the message, and then enter a public or private key. The program then outputs
 the encrypted or decrypted message. Additionally, the public modulus is needed
-for both encryption and decryption.
+for both encryption and decryption. For the key and modulus, the user can either
+enter the values when prompted, or leave them empty to use the values from the
+.env file.
 
 Authors: Juniper Pasternak and Clara Siefke
 Date: 03/18/2024
