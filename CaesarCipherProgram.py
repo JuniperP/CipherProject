@@ -1,171 +1,96 @@
-# Caesar Cipher Program
-# Authors: Clara Siefke and Juniper Pasternak
-# Date: 03/16/24 to 3/17/2024
+"""Caesar Cipher Program
+This program takes a message and a shift value and either encrypts or decrypts the
+message using the Caesar cipher. The user is prompted to enter a message, choose
+whether to encrypt or decrypt the message, and then enter a shift value.
+The program then outputs the encrypted or decrypted message.
 
-# This function takes a string as its parameter and returns an array of the numerical values (still as strings) corresponding to each to each letter.
-def alphaToNum(a):
-    a = a.upper()
+Authors: Clara Siefke and Juniper Pasternak
+Date: 03/16/24 to 3/17/2024
+"""
 
-    array = []
+import sys
 
-    for i in range(len(a)):
-        array.append(a[i])
+def alphaToNum(alphaStr: str) -> list[int]:
+    """Converts a string of capital letters to a list of numbers representing their
+       position in the alphabet from 0 to 25.
 
-    for i in range(len(array)):
-        if(array[i] == "A"):
-            array[i] = "0"
-        elif(array[i] == "B"):
-            array[i] = "1"
-        elif(array[i] == "C"):
-            array[i] = "2"
-        elif(array[i] == "D"):
-            array[i] = "3"
-        elif(array[i] == "E"):
-            array[i] = "4"
-        elif(array[i] == "F"):
-            array[i] = "5"
-        elif(array[i] == "G"):
-            array[i] = "6"
-        elif(array[i] == "H"):
-            array[i] = "7"
-        elif(array[i] == "I"):
-            array[i] = "8"
-        elif(array[i] == "J"):
-            array[i] = "9"
-        elif(array[i] == "K"):
-            array[i] = "10"
-        elif(array[i] == "L"):
-            array[i] = "11"
-        elif(array[i] == "M"):
-            array[i] = "12"
-        elif(array[i] == "N"):
-            array[i] = "13"
-        elif(array[i] == "O"):
-            array[i] = "14"
-        elif(array[i] == "P"):
-            array[i] = "15"
-        elif(array[i] == "Q"):
-            array[i] = "16"
-        elif(array[i] == "R"):
-            array[i] = "17"
-        elif(array[i] == "S"):
-            array[i] = "18"
-        elif(array[i] == "T"):
-            array[i] = "19"
-        elif(array[i] == "U"):
-            array[i] = "20"
-        elif(array[i] == "V"):
-            array[i] = "21"
-        elif(array[i] == "W"):
-            array[i] = "22"
-        elif(array[i] == "X"):
-            array[i] = "23"
-        elif(array[i] == "Y"):
-            array[i] = "24"
-        elif(array[i] == "Z"):
-            array[i] = "25"
+    Args:
+        alphaStr (str): a capital letter string to be converted
 
-    for i in range(len(array)):
-        array[i] = int(array[i])
-    
-    return array
+    Returns:
+        list[int]: a list of integers representing each letter in the alphabet
+    """
 
-# numToAlpha
-# This functions takes an array of numbers (as integers) and returns a string of letters with each letter corresponding to a number in the array.
-def numToAlpha(n):
-    for i in range(len(n)):
-        if(n[i] == 0):
-            n[i] = "A"
-        elif(n[i] == 1):
-            n[i] = "B"
-        elif(n[i] == 2):
-            n[i] = "C"
-        elif(n[i] == 3):
-            n[i] = "D"
-        elif(n[i] == 4):
-            n[i] = "E"
-        elif(n[i] == 5):
-            n[i] = "F"
-        elif(n[i] == 6):
-            n[i] = "G"
-        elif(n[i] == 7):
-            n[i] = "H"
-        elif(n[i] == 8):
-            n[i] = "I"
-        elif(n[i] == 9):
-            n[i] = "J"
-        elif(n[i] == 10):
-            n[i] = "K"
-        elif(n[i] == 11):
-            n[i] = "L"
-        elif(n[i] == 12):
-            n[i] = "M"
-        elif(n[i] == 13):
-            n[i] = "N"
-        elif(n[i] == 14):
-            n[i] = "O"
-        elif(n[i] == 15):
-            n[i] = "P"
-        elif(n[i] == 16):
-            n[i] = "Q"
-        elif(n[i] == 17):
-            n[i] = "R"
-        elif(n[i] == 18):
-            n[i] = "S"
-        elif(n[i] == 19):
-            n[i] = "T"
-        elif(n[i] == 20):
-            n[i] = "U"
-        elif(n[i] == 21):
-            n[i] = "V"
-        elif(n[i] == 22):
-            n[i] = "W"
-        elif(n[i] == 23):
-            n[i] = "X"
-        elif(n[i] == 24):
-            n[i] = "Y"
-        elif(n[i] == 25):
-            n[i] = "Z"
+    # We can take the Unicode value of each letter and subtract the Unicode value
+    # of 'A' to get the numerical value of the letter.
+    return [ord(char) - ord('A') for char in alphaStr]
 
-    txt = ""
+def numToAlpha(numList: list[str]):
+    """Converts a list of numbers to a string of capital letters.
 
-    for i in range(len(n)):
-        txt = txt + n[i]
-    
-    return txt
+    Args:
+        numList (list[str]): a list of integers in range [0, 25] to be converted
 
-# encrypt
-# This function takes a string, calls the alphaToNum function to convert it into an array of numbers (as integers), adds the length of the array to each value in the array and makes them mod 26, and then calls the numToAlpha function to covert the array into a string of letters. It returns this string of letters.
-def encrypt(m):
+    Returns:
+        _type_: a string of capital letters representing each number in the list
+    """
 
-    array = alphaToNum(m)
+    # We can take the numerical value of each letter and add the Unicode value
+    # of 'A' to get the Unicode value of the letter.
+    return "".join([chr(num + ord('A')) for num in numList])
 
-    for i in range(len(array)):
-        array[i] = (array[i] + len(array)) % 26
+def shiftMsg(msg: str, shift: int) -> str:
+    """Shifts each letter in the message by the shift value and returns the new message.
+       For example, if the message is "ABC" and the shift value is 3, the new message
+       will be "DEF".
 
-    return numToAlpha(array)
+    Args:
+        msg (str): _description_
+        shift (int): _description_
 
-# decrypt
-# This function takes a string, calls the alphaToNum function to convert it into an array of numbers (as integers), subtracts the length of the array from each value in the array and makes them mod 26, and then calls the numToAlpha function to covert the array into a string of letters. It returns this string of letters.
-def decrypt(m):
+    Returns:
+        str: _description_
+    """
 
-    array = alphaToNum(m)
+    return "".join(numToAlpha(
+        [(num + shift) % 26 for num in alphaToNum(msg)])
+    )
 
-    for i in range(len(array)):
-        array[i] = (array[i] - len(array)) % 26
+def main() -> int:
+    """Runs the main program.
 
-    return numToAlpha(array)
+    Returns:
+        int: The exit code. 0 for success, 1 for failure.
+    """
 
-# main
-def main():
-    message = input("Enter a message that is fully capitalized and contains no spaces:\n")
+    # Get the message and make sure it only contains letters
+    message: str = input(
+        "Enter a message with (alphabetical) to encrypt/decrypt:\n"
+    ).strip().replace(" ", "").upper()
+    if not message.isalpha():
+        print("Invalid message. Please enter only letters.")
+        return 1
 
-    option = input("Enter \"E\" if you wish to encrypt the message. Enter \"D\" if you wish to decrypt the message:\n")
+    # Get the option and make sure it is valid
+    option: str = input("[E] to encrypt | [D] to decrypt:\n").strip().upper()
+    if option not in ["E", "D"]:
+        print("Invalid option. Please enter 'E' or 'D'.")
+        return 1
 
-    if(option == "E"):
-        print("\nYour encrypted message is " + encrypt(message))
-    elif(option == "D"):
-        print("\nYour decrypted message is " + decrypt(message))
+    # Make sure the shift value is an integer
+    try:
+        shift = int(input("Enter your secret key (shift value):\n").strip())
+    except ValueError:
+        print("Invalid key. Please enter an integer.")
+        return 1
+
+    # If the user wants to decrypt the message, negate the shift value
+    if option == "D":
+        shift *= -1
+
+    print("\nYour decrypted message is " + shiftMsg(message, shift))
+
+    return 0
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
