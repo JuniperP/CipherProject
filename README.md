@@ -5,7 +5,7 @@
 This project answers a series of Discrete Math questions related to cryptography.
 It also features two python programs to run cryptographic functions.
 
-This project was completed for educational purposes for MATH215 at Kalamazoo College.  
+This project was completed for educational purposes for MATH250 at Kalamazoo College.  
 Its answers and programs aim to follow the
 [Cipher Project specifications](https://www.cs.kzoo.edu/math250/CipherProj.html).
 
